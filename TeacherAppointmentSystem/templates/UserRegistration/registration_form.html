@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container-fluid">
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+        <div class="navbar-header">
+            <div class="navbar-brand">
+                <a href="#">
+                    <img src="#" alt="logo" id="navbarLogo" class="img-responsive">
+                </a>
+            </div>
+        </div>
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="{% url 'user_registration:user_login' %}">Login</a></li>
+            <li><a href="{% url 'user_registration:teacher_or_student' %}">Signup</a></li>
+        </ul>
+        </div>
+    </nav>
+    {% load bootstrap %}
+    {% block body %}
+        <div class="panel panel-default" style="width:600px;margin:auto;">
+            <div class="panel-body">
+                <form action="" method="post">
+                    {% csrf_token %}
+                    {{ form|bootstrap }}
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+             </div>
+        </div>
+    {% endblock %}
+</div>
+</body>
+</html>

@@ -1,0 +1,28 @@
+{% extends 'base/teacherBase.html' %}
+{% block body %}
+{% if not person %}
+    <div class="row">
+<div class="col-md-6">
+    <h3>Person Name: </h3><input type="text" value="{{ person.person_name }}" class="field left form-control" readonly>
+    <h3>Date of Birth: </h3><input type="text" value="{{ person.person_dob }}" class="field left form-control" readonly>
+    <h3>Email: </h3><input type="text" value="{{ person_initialinfo.user_mail }}" class="field left form-control" readonly>
+    <h3>ID: </h3><input type="text" value="{{ person_initialinfo.varsity_id }}" class="field left form-control" readonly>
+    <h3>Name Initial: </h3><input type="text" value="{{ person_initialinfo.teacher_initial }}" class="field left form-control" readonly>
+    <br>
+    <a href="{% url 'personal_info:teacher_info_creation' person.id %}" class="btn btn-success">Update Profile</a>
+</div>
+</div>
+{% else %}
+<div class="row">
+<div class="col-md-6">
+    <h3>Person Name: </h3><input type="text" value="{{ person.person_name }}" class="field left form-control" readonly>
+    <h3>Date of Birth: </h3><input type="text" value="{{ person.person_dob }}" class="field left form-control" readonly>
+    <h3>Email: </h3><input type="text" value="{{ person_initialinfo.user_mail }}" class="field left form-control" readonly>
+    <h3>ID: </h3><input type="text" value="{{ person_initialinfo.varsity_id }}" class="field left form-control" readonly>
+    <h3>Name Initial: </h3><input type="text" value="{{ person_initialinfo.teacher_initial }}" class="field left form-control" readonly>
+    <br>
+    <a href="{% url 'personal_info:teacher_update' person.id %}" class="btn btn-success">Update Profile</a>
+</div>
+</div>
+{% endif %}
+{% endblock %}

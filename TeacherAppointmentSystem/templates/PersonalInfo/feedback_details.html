@@ -1,0 +1,6 @@
+{% extends 'base/teacherBase.html' %}
+{% block body %}
+    <h1> Feedback to {{ feedback.student_id }}</h1>
+    <p>Feedback: {{ feedback.feedback_body }}</p>
+    <p>{{ feedback.feedback_DateTime }}</p>
+{% endblock %}

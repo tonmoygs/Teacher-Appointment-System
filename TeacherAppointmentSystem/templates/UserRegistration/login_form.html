@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+<div class="container-fluid">
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+        <div class="navbar-header">
+            <div class="navbar-brand">
+                <a href="#">
+                    <img src="#" alt="logo" id="navbarLogo" class="img-responsive">
+                </a>
+            </div>
+        </div>
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="{% url 'user_registration:user_login' %}">Login</a></li>
+            <li><a href="{% url 'user_registration:teacher_or_student' %}">Signup</a></li>
+        </ul>
+        </div>
+    </nav>
+{% load bootstrap %}
+<div class="panel panel-default" style="width:600px;margin:auto;">
+<div class="panel-heading">
+    <h2>Please login to continue</h2>
+</div>
+<div class="panel-body">
+<form action="" method="post">
+    {% csrf_token %}
+{% for field in form %}
+    <div class="form-group">
+    <div class="col-md-offset-2">
+        <span class="text-danger small">
+            {{ field.errors }}
+        </span>
+    <div>{{ field|bootstrap }}</div>
+    </div>
+    </div>
+{% endfor %}
+    <div class="form-group">
+    <button type="submit" id="loginButton" class="col-md-offset-2 btn btn-success">Login</button>
+    </div>
+</form>
+</div>
+</div>
+</div>
+</body>
+</html>

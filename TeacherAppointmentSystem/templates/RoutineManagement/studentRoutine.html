@@ -1,0 +1,56 @@
+{% extends 'base/studentBase.html' %}
+{% block title %}Class Routine {% endblock %}
+{% block body %}
+    <div class="row">
+	<div class="col-md-12">
+		<h3 class="text-center">Class Routine</h3>
+    {% if not routine %}
+        <h2>You have not set any routine yet.</h2>
+        <a href="{% url 'routine_management:set_routine' user.id %}" class="btn btn-success">Set Routine</a>
+    {% else %}
+		<div class="table-responsive">
+			<table class="table table-bordered" id="counselingTable">
+				<thead>
+					<tr>
+						<th class="text-center">Day</th>
+						<th class="text-center">8:30-10:00</th>
+						<th class="text-center">10:00-11:30</th>
+						<th class="text-center">11:30-1:00</th>
+						<th class="text-center">1:00-2:30</th>
+						<th class="text-center">2:30-4:00</th>
+                        <th class="text-center">4:00-5:30</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+                    {% for routines in routine %}
+                        <td class="text-center">{{ routines.day|default:"" }}</td>
+                        <td class="text-center"><div contenteditable>{{ routines.slot1_course_code|default:"" }}<br>
+                            {{ routines.slot1_course_name|default:"" }}<br>
+                            {{ routines.slot1_teacher_initial|default:"" }}</div></td>
+                        <td class="text-center"><div contenteditable>{{ routines.slot2_course_code|default:"" }}<br>
+                            {{ routines.slot2_course_name|default:"" }}<br>
+                            {{ routines.slot2_teacher_initial|default:"" }}</div></td>
+                        <td class="text-center"><div contenteditable>{{ routines.slot3_course_code|default:"" }}<br>
+                            {{ routines.slot3_course_name|default:"" }}<br>
+                            {{ routines.slot3_teacher_initial|default:"" }}</div></td>
+                        <td class="text-center"><div contenteditable>{{ routines.slot4_course_code|default:"" }}<br>
+                            {{ routines.slot4_course_name|default:"" }}<br>
+                            {{ routines.slot4_teacher_initial|default:"" }}</div></td>
+                        <td class="text-center"><div contenteditable>{{ routines.slot5_course_code|default:"" }}<br>
+                            {{ routines.slot5_course_name|default:"" }}<br>
+                            {{ routines.slot5_teacher_initial|default:"" }}</div></td>
+                        <td class="text-center"><div contenteditable>{{ routines.slot6_course_code|default:"" }}<br>
+                            {{ routines.slot6_course_name|default:"" }}<br>
+                            {{ routines.slot6_teacher_initial|default:"" }}</div></td>
+					</tr>
+                    {% endfor %}
+				</tbody>
+			</table>
+        <a href="{% url 'routine_management:set_routine' user.id %}" class="btn btn-success">Set Routine</a>
+    {% endif %}
+
+{% endblock %}
+</div>
+</div>
+</div>

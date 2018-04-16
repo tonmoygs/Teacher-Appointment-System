@@ -1,0 +1,83 @@
+from django.contrib.auth.models import AbstractUser
+from django.db import models
+
+# Create your models here.
+
+
+class User(AbstractUser):
+    varsity_id = models.CharField(max_length=15, default="")
+    user_mail = models.EmailField(max_length=40, default="")
+    teacher_initial = models.CharField(max_length=10, default="")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

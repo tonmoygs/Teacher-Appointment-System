@@ -1,0 +1,21 @@
+{% extends 'base/studentBase.html' %}
+
+{% block body %}
+    {% if mail %}
+        <table class="table table-responsive">
+        {% for mails in mail %}
+            <tr>
+                <td><a href="#">{{ mails.mail_subject }}</a></td>
+                <td style="width:20px">&nbsp</td>
+                <td><a href="#">{{ mails.mail_body }}</a></td>
+                <td style="width:20px">&nbsp</td>
+                <td><a href="#">{{ mails.sent_date }}</a></td>
+            </tr>
+        {% endfor %}
+        </table>
+        <a href="{% url 'mail_sending:send_mail' user.id %}" class="btn btn-success">Send Mail</a>
+    {% else %}
+        <h2>You have no mails</h2>
+        <a href="{% url 'mail_sending:send_mail' user.id %}" class="btn btn-success">Send Mail</a>
+    {% endif %}
+{% endblock %}

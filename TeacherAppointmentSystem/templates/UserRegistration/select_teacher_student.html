@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+<div class="container-fluid">
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+        <div class="navbar-header">
+            <div class="navbar-brand">
+                <a href="#">
+                    <img src="#" alt="logo" id="navbarLogo" class="img-responsive">
+                </a>
+            </div>
+        </div>
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="#">Login</a></li>
+            <li><a href="{% url 'user_registration:teacher_or_student' %}">Signup</a></li>
+        </ul>
+        </div>
+    </nav>
+
+<a href="{% url 'user_registration:student_signup' %}" class="btn btn-success">I'm a Student</a><span><a href="{% url 'user_registration:teacher_signup' %}" class="btn btn-success">I'm a Teacher</a></span>
+
+</div>
+</body>
+</html>

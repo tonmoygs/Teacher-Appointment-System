@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../Mail/.idea/Mail.iml" filepath="$PROJECT_DIR$/../Mail/.idea/Mail.iml" />
+      <module fileurl="file://G:/django/TIme-Pass-master/.idea/TIme-Pass-master.iml" filepath="G:/django/TIme-Pass-master/.idea/TIme-Pass-master.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/TeacherAppointment.iml" filepath="$PROJECT_DIR$/.idea/TeacherAppointment.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../django_school/.idea/django_school.iml" filepath="$PROJECT_DIR$/../django_school/.idea/django_school.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../mysite/.idea/mysite.iml" filepath="$PROJECT_DIR$/../mysite/.idea/mysite.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../studentAdvising/.idea/studentAdvising.iml" filepath="$PROJECT_DIR$/../studentAdvising/.idea/studentAdvising.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../todolist/.idea/todolist.iml" filepath="$PROJECT_DIR$/../todolist/.idea/todolist.iml" />
+    </modules>
+  </component>
+</project>

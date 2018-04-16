@@ -1,0 +1,13 @@
+{% extends 'base/studentBase.html' %}
+{% block title %}Feedbacks {% endblock %}
+{% block body %}
+    {% if student_feedbacks %}
+        <ul>
+        {% for feedbacks in student_feedbacks %}
+           <li><a href="">{{ feedbacks.feedback_body }}</a></li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <h2>You currently have no feedback.</h2>
+    {% endif %}
+{% endblock %}

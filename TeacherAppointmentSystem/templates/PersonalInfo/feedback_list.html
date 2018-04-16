@@ -1,0 +1,13 @@
+{% extends 'base/teacherBase.html' %}
+{% block title %}Feedbacks {% endblock %}
+{% block body %}
+    {% if feedback %}
+        <ul class="list-unstyled">
+            {% for feedbacks in feedback %}
+                <li><a href="{% url 'personal_info:feedback_details' feedbacks.id %}">{{ feedbacks.student_id }}</a></li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <h2>You currently have no feedback.</h2>
+    {% endif %}
+{% endblock %}
